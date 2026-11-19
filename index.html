@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sasihong Hakrawee — Business Analyst</title>
+<meta name="description" content="Sasihong Hakrawee — Senior Business & System Analyst. Education, experience, highlight projects and skills.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#C2410C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F97316'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='700' font-size='30' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ======================= ACCESS GATE ======================= -->
+<main id="gate" class="gate" aria-label="Access verification">
+  <div class="gate-top">
+    <span class="brand">Sasihong<b>.</b></span>
+    <div class="steps" aria-live="polite"><i class="on"></i><i id="step2bar"></i><span id="step-text">Step 1 of 2</span></div>
+  </div>
+
+  <!-- STEP 1 · CODE -->
+  <section id="step-code" class="card" aria-labelledby="code-title">
+    <div class="eyebrow">
+      <svg class="ico" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      Verify code
+    </div>
+    <h1 id="code-title">Welcome! Let's verify you first</h1>
+    <p class="lead">Type the 6-digit code shown below to continue.</p>
+
+    <div class="code-row">
+      <div class="code-box" id="code-box" role="img" aria-label="">
+        <svg class="noise" viewBox="0 0 300 78" preserveAspectRatio="none" aria-hidden="true"><path d="M0 56 C60 18 120 74 180 36 S270 20 300 50"/><path d="M0 22 C70 52 140 6 210 46 S280 64 300 26"/></svg>
+        <div class="code-digits" id="code-digits" aria-hidden="true"></div>
+      </div>
+      <button class="icon-btn" id="refresh-code" type="button" aria-label="Show a new code">
+        <svg class="ico" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg>
+      </button>
+    </div>
+
+    <form id="code-form" novalidate>
+      <span class="field-label" id="otp-label">Enter the code</span>
+      <div class="otp" id="otp" role="group" aria-labelledby="otp-label">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 1">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 2">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 3">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 4">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 5">
+        <input inputmode="numeric" maxlength="1" autocomplete="off" aria-label="Digit 6">
+      </div>
+      <div class="msg" id="code-msg" role="alert"></div>
+      <button class="btn btn-primary" type="submit">Verify code
+        <svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </section>
+
+  <!-- STEP 2 · IMAGE SELECT -->
+  <section id="step-human" class="card" aria-labelledby="human-title" hidden>
+    <div class="eyebrow">
+      <svg class="ico" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      Human check
+    </div>
+    <h1 id="human-title">Are you human?</h1>
+    <p class="lead">Pick every picture that matches. Then press Verify.</p>
+
+    <div id="human-task">
+      <div class="task">
+        <div class="task-ico" id="task-ico" aria-hidden="true"></div>
+        <div><small>Select all images with</small><strong id="task-name">a laptop</strong></div>
+      </div>
+      <div class="grid9" id="grid9"></div>
+      <div class="msg" id="human-msg" role="alert"></div>
+      <div class="grid-foot">
+        <button class="btn btn-ghost" id="new-grid" type="button">
+          <svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg>
+          New images
+        </button>
+        <button class="btn btn-primary" id="verify-human" type="button">Verify</button>
+      </div>
+    </div>
+
+    <div class="verified" id="verified" hidden>
+      <div class="ring"><svg class="ico" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h2 style="font-size:22px">Verified — welcome in!</h2>
+      <p style="margin:0;color:var(--muted)">Opening the profile…</p>
+    </div>
+  </section>
+
+  <p class="gate-foot">Profile of Sasihong Hakrawee · Business Analyst</p>
+</main>
+
+<!-- ======================= PROFILE SITE ======================= -->
+<div id="site" hidden>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="brand">Sasihong<b>.</b></a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a class="link" href="#education">Education</a></li>
+          <li><a class="link" href="#experience">Experience</a></li>
+          <li><a class="link" href="#highlights">Highlights</a></li>
+          <li><a class="link" href="#skills">Skills</a></li>
+          <li><a class="link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <svg class="wave" viewBox="0 0 600 800" aria-hidden="true"><path d="M300 0c120 120 40 240 160 360s20 280 140 440H600V0z" fill="#FFEDD5"/><path d="M380 0c80 140 0 260 110 380s10 260 110 420H600V0z" fill="#FED7AA" opacity=".6"/></svg>
+      <div class="wrap">
+        <div class="hero-text">
+          <div class="pill"><i></i>Open to new opportunities</div>
+          <h1>Sasihong<br><span>Hakrawee</span></h1>
+          <div class="role">Business Analyst</div>
+          <p class="intro">A Senior Business &amp; System Analyst with 12 years in digital products — from websites and consumer apps to banking. I turn business needs into clear requirements, designs and solutions teams can build.</p>
+          <div class="contact-chips">
+            <a class="chip" href="mailto:sasihong.hkw@gmail.com"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>sasihong.hkw@gmail.com</a>
+            <a class="chip" href="tel:+66953899754"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+66 95 389 9754</a>
+            <span class="chip"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Bangkok, Thailand</span>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>12 yrs</b><span>Digital product experience (2014–2026)</span></div>
+            <div class="stat"><b>5</b><span>Organisations, incl. SCB Tech X &amp; Krungthai Bank</span></div>
+            <div class="stat"><b>M.Sc.</b><span>Software Engineering, KMUTT</span></div>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="frame"><img src="assets/portrait.jpg" alt="Portrait of Sasihong Hakrawee" width="410" height="615"></div>
+          <div class="badge">
+            <div class="dot"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></div>
+            <div><b>Senior BA</b>Extend IT · SCB Tech X</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote">
+      <div class="wrap reveal">
+        <blockquote>
+          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 18v-5.5C4 8.4 6.3 6 10 5.5V8c-2 .5-3 1.8-3 4h3v6zm10 0v-5.5c0-4.1 2.3-6.5 6-7V8c-2 .5-3 1.8-3 4h3v6z"/></svg>
+          <p>While AI possesses advanced capabilities, the success of any organization still relies on experts who can develop and collaborate effectively with AI — a skill set I bring to the table.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="block soft" id="education">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div><div class="num">01 — Education</div><h2>Where it started</h2></div>
+          <p>From computer studies to a master's in software engineering.</p>
+        </div>
+        <div class="edu">
+          <article class="edu-card reveal">
+            <span class="yr">2010</span>
+            <h3>Vocational Certificate in Computer Studies</h3>
+            <div class="sch">Siam Business Administration College</div>
+            <div class="gpa">GPA <div class="bar"><i style="width:95%"></i></div><b>3.80</b></div>
+          </article>
+          <article class="edu-card reveal">
+            <span class="yr">2014</span>
+            <h3>B.Sc. Information Technology</h3>
+            <div class="sch">Rajamangala University of Technology Thanyaburi</div>
+            <div class="gpa">GPA <div class="bar"><i style="width:87.5%"></i></div><b>3.50</b></div>
+          </article>
+          <article class="edu-card top reveal">
+            <span class="yr">2017</span>
+            <h3>M.Sc. Software Engineering</h3>
+            <div class="sch">King Mongkut's University of Technology Thonburi</div>
+            <div class="gpa">GPA <div class="bar"><i style="width:78.75%"></i></div><b>3.15</b></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="block" id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div><div class="num">02 — Experience</div><h2>Work experience</h2></div>
+          <p>Twelve years across media, consumer apps, the public sector and banking.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="job reveal">
+            <div class="when"><b>Apr 2022 – 2026</b><span>Bangkok</span><br><span class="now"><i></i>Current</span></div>
+            <article class="job-card">
+              <h3>Senior Business &amp; System Analyst</h3>
+              <div class="org"><b>Extend IT Co., Ltd.</b><span class="tag">Client · SCB Tech X</span><span class="tag">Banking</span></div>
+              <ul>
+                <li>Analyse business requirements and create functional specifications</li>
+                <li>Gather requirements and design solutions</li>
+                <li>Design screens and workflows</li>
+                <li>Design and develop features</li>
+                <li>Design dashboards and reports</li>
+                <li>Create functional specification documents</li>
+                <li>Support user acceptance testing (UAT)</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="job reveal">
+            <div class="when"><b>Jan 2022 – Mar 2022</b><span>Client site</span></div>
+            <article class="job-card">
+              <h3>Business Analyst</h3>
+              <div class="org"><b>Azure Computer</b><span class="tag">Client site · Army</span><span class="tag">Public sector</span></div>
+              <ul>
+                <li>Performed requirements analysis</li>
+                <li>Worked closely with the client and technicians</li>
+                <li>Designed wireframes and found business solutions</li>
+                <li>Created user stories and consolidated related files</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="job reveal">
+            <div class="when"><b>Jan 2021 – Dec 2021</b><span>Consulting</span></div>
+            <article class="job-card">
+              <h3>Deployment Analyst / Application Design</h3>
+              <div class="org"><b>Accenture</b><span class="tag">Client · Krungthai Bank (KTB)</span><span class="tag">Banking</span></div>
+              <ul>
+                <li>Coordinated technical and non-technical teams to align key deliverables</li>
+                <li>Managed technical deployment activities so cross-functional teams worked efficiently</li>
+                <li>Consolidated the deployment runbook and rollback runbook</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="job reveal">
+            <div class="when"><b>Apr 2016 – Dec 2020</b><span>4 yrs 9 mos</span></div>
+            <article class="job-card">
+              <h3>Senior System Analyst</h3>
+              <div class="org"><b>True Digital Group</b><span class="tag">TrueID application</span><span class="tag">Consumer app</span></div>
+              <ul>
+                <li>Designed flow diagrams and wrote specification documents</li>
+                <li>Analysed business requirements and business processes</li>
+                <li>Analysed and supported front-end website solutions</li>
+                <li>Identified options for potential solutions</li>
+                <li>Provided requirements to back-end and tested their APIs</li>
+                <li>Worked with the PO, developers, testers and end users on compatibility and satisfaction</li>
+                <li>Prepared system manuals and user documents for the operations team</li>
+              </ul>
+              <div class="sub-role">
+                <h4>Software Tester</h4>
+                <ul>
+                  <li>Wrote test cases and test scripts</li>
+                  <li>Wrote bug reports and followed them to closure</li>
+                  <li>Executed manual tests and analysed results</li>
+                  <li>Ran UAT with real users and demo data</li>
+                  <li>Collected APIs for developers during website migration</li>
+                  <li>Tested across desktop and mobile environments</li>
+                  <li>Designed URLs for the new site and supported on-page SEO</li>
+                  <li>Digital marketing knowledge: Facebook Ads, Google Analytics, LINE@</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="job reveal">
+            <div class="when"><b>Apr 2014 – Mar 2016</b><span>First role</span></div>
+            <article class="job-card">
+              <h3>Webmaster</h3>
+              <div class="org"><b>Mono Group</b><span class="tag">Mono29 Digital TV</span><span class="tag">Media</span></div>
+              <ul>
+                <li>Debugged website performance issues</li>
+                <li>Planned and ran measurable, continuous website improvements</li>
+                <li>Kept the website available and secure, including fixing penetration-testing findings</li>
+                <li>Created and edited site content with search-engine optimisation in mind</li>
+                <li>Reviewed statistics and monitored analytics for the website and YouTube</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="block soft" id="highlights">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div><div class="num">03 — Highlights</div><h2>Highlight projects</h2></div>
+          <p>Standout work I've delivered, and the skills each one used.</p>
+        </div>
+        <div class="hl">
+          <article class="hl-card feature wide reveal">
+            <div class="hl-ico"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></div>
+            <div class="where">SCB Tech X · 2022 – 2026</div>
+            <h3>Banking features, from requirement to UAT</h3>
+            <p>Own the analysis end to end for banking features: gather requirements, design solutions, screens and workflows, write the functional specifications, and support UAT through go-live.</p>
+            <div class="tags"><span class="tag">Requirements</span><span class="tag">Functional spec</span><span class="tag">Workflow design</span><span class="tag">UAT</span></div>
+          </article>
+          <article class="hl-card wide reveal">
+            <div class="hl-ico"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg></div>
+            <div class="where">SCB Tech X · 2022 – 2026</div>
+            <h3>Dashboards &amp; reports</h3>
+            <p>Design dashboards and reports that turn data into something the business can read and act on, backed by hands-on SQL, Excel and Power BI.</p>
+            <div class="tags"><span class="tag">Dashboard design</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
+          </article>
+          <article class="hl-card reveal">
+            <div class="hl-ico"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></div>
+            <div class="where">Accenture · Krungthai Bank · 2021</div>
+            <h3>Deployment &amp; rollback runbooks</h3>
+            <p>Consolidated the deployment and rollback runbooks and coordinated cross-functional teams for safe, aligned releases.</p>
+            <div class="tags"><span class="tag">Release</span><span class="tag">Runbook</span></div>
+          </article>
+          <article class="hl-card reveal">
+            <div class="hl-ico"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+            <div class="where">True Digital Group · 2016 – 2020</div>
+            <h3>TrueID application</h3>
+            <p>Flow diagrams and specs, API requirements and testing with back-end, test cases, UAT with real users, and user manuals for operations.</p>
+            <div class="tags"><span class="tag">Flows</span><span class="tag">API testing</span><span class="tag">QA</span></div>
+          </article>
+          <article class="hl-card reveal">
+            <div class="hl-ico"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></div>
+            <div class="where">Mono29 Digital TV · Army project</div>
+            <h3>Secure web &amp; public-sector solutions</h3>
+            <p>Kept a TV broadcaster's website available and secure, fixing penetration-testing findings; later designed wireframes and user stories for an Army client.</p>
+            <div class="tags"><span class="tag">Web security</span><span class="tag">Wireframes</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="block" id="skills">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div><div class="num">04 — Skills</div><h2>Skills &amp; tools</h2></div>
+          <p>What I bring to a team, and the tools I use every day.</p>
+        </div>
+        <div class="skills">
+          <div class="sk-core reveal">
+            <h3><span><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>Core skills</h3>
+            <ul class="core-list">
+              <li><span class="n">01</span><div><b>Business analysis &amp; requirement gathering</b><small>Requirements, specs, user stories</small></div></li>
+              <li><span class="n">02</span><div><b>Data analysis &amp; visualisation</b><small>SQL, Excel, Power BI</small></div></li>
+              <li><span class="n">03</span><div><b>Process improvement &amp; workflow optimisation</b><small>Flows, sequence diagrams, solution options</small></div></li>
+              <li><span class="n">04</span><div><b>Stakeholder management &amp; communication</b><small>Business, tech, PO and end users</small></div></li>
+              <li><span class="n">05</span><div><b>Agile / Scrum methodology</b><small>Sprint delivery with cross-functional teams</small></div></li>
+            </ul>
+          </div>
+          <div class="sk-tools">
+            <div class="sk-group reveal">
+              <h3><span><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h3"/></svg></span>Delivery &amp; docs</h3>
+              <div class="pills"><span>Jira</span><span>Confluence</span><span>Agile / Scrum</span></div>
+            </div>
+            <div class="sk-group reveal">
+              <h3><span><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18"/></svg></span>Design &amp; modelling</h3>
+              <div class="pills"><span>Figma</span><span>Draw.io</span><span>Visio</span><span>PlantUML</span><span>Photoshop</span></div>
+            </div>
+            <div class="sk-group reveal">
+              <h3><span><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>Data &amp; API</h3>
+              <div class="pills"><span>SQL</span><span>MySQL</span><span>Excel</span><span>Power BI</span><span>Postman</span></div>
+            </div>
+            <div class="sk-group reveal">
+              <h3><span><svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></span>Web &amp; analytics</h3>
+              <div class="pills"><span>Google Analytics</span><span>Google Webmaster Tools</span><span>Firebase</span><span>On-page SEO</span><span>Facebook Ads</span><span>LINE@</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-box reveal">
+          <div>
+            <h2>Let's work together</h2>
+            <p>Thank you for visiting. I'd love to talk about how I can help your team turn ideas into well-built products.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-white" href="mailto:sasihong.hkw@gmail.com">sasihong.hkw@gmail.com</a>
+            <a class="btn btn-line" href="tel:+66953899754">+66 95 389 9754</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>© 2026 Sasihong Hakrawee · Bangkok, Thailand</span><a href="#top">Back to top ↑</a></div></footer>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
