@@ -116,7 +116,7 @@ a.chip:hover{border-color:var(--orange-200);color:var(--orange-strong)}
 .stat span{font-size:13px;color:var(--muted)}
 .hero-photo{flex:1 1 280px;max-width:380px;margin:0 auto;position:relative}
 .hero-photo .frame{position:relative;border-radius:200px 200px 24px 24px;overflow:hidden;background:var(--orange-100);box-shadow:0 30px 60px -24px rgba(194,65,12,.35)}
-.hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.hero-photo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:top}
 .hero-photo .badge{position:absolute;left:-16px;bottom:28px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;font-size:13px}
 .hero-photo .badge b{display:block;font-family:var(--font-head);font-size:14px}
 .hero-photo .badge .dot{width:36px;height:36px;border-radius:10px;background:var(--orange-50);color:var(--orange-strong);display:flex;align-items:center;justify-content:center}
