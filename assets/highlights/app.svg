@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Illustration of a streaming mobile app with test cases and API checks">
+<defs>
+<linearGradient id="bg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FED7AA"/><stop offset="1" stop-color="#FFF7ED"/></linearGradient>
+<linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F97316"/><stop offset="1" stop-color="#7C2D12"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#7C2D12" flood-opacity=".25"/></filter>
+</defs>
+<rect width="800" height="500" fill="url(#bg)"/>
+<circle cx="400" cy="250" r="210" fill="#fff" opacity=".45"/><circle cx="400" cy="250" r="150" fill="#fff" opacity=".5"/>
+<!-- back phone -->
+<g filter="url(#sh)" transform="rotate(10 520 250)">
+<rect x="440" y="60" width="170" height="360" rx="28" fill="#1C1917"/><rect x="449" y="69" width="152" height="342" rx="21" fill="#FAFAF9"/>
+<g fill="#FED7AA"><rect x="460" y="90" width="62" height="84" rx="10"/><rect x="528" y="90" width="62" height="84" rx="10"/><rect x="460" y="182" width="62" height="84" rx="10"/><rect x="528" y="182" width="62" height="84" rx="10"/><rect x="460" y="274" width="62" height="84" rx="10"/><rect x="528" y="274" width="62" height="84" rx="10"/></g>
+<g fill="#F97316" opacity=".8"><rect x="460" y="150" width="62" height="24" rx="0"/><rect x="528" y="242" width="62" height="24"/><rect x="460" y="334" width="62" height="24"/></g>
+</g>
+<!-- front phone -->
+<g filter="url(#sh)" transform="rotate(-6 320 250)">
+<rect x="230" y="40" width="190" height="400" rx="30" fill="#1C1917"/><rect x="240" y="50" width="170" height="380" rx="22" fill="#fff"/>
+<rect x="295" y="58" width="60" height="10" rx="5" fill="#1C1917"/>
+<rect x="252" y="80" width="146" height="120" rx="14" fill="url(#hero)"/>
+<circle cx="325" cy="140" r="24" fill="#fff" opacity=".95"/><path d="M318 128v24l20-12z" fill="#C2410C"/>
+<rect x="264" y="182" width="90" height="6" rx="3" fill="#fff" opacity=".5"/><rect x="264" y="182" width="52" height="6" rx="3" fill="#fff"/>
+<rect x="252" y="214" width="110" height="12" rx="6" fill="#1C1917"/><rect x="252" y="234" width="80" height="8" rx="4" fill="#D6D3D1"/>
+<g><rect x="252" y="258" width="66" height="90" rx="12" fill="#FFEDD5"/><rect x="326" y="258" width="66" height="90" rx="12" fill="#FDBA74"/><rect x="252" y="356" width="66" height="60" rx="12" fill="#FDBA74"/><rect x="326" y="356" width="66" height="60" rx="12" fill="#FFEDD5"/></g>
+</g>
+<!-- test card -->
+<g filter="url(#sh)">
+<rect x="40" y="110" width="200" height="150" rx="18" fill="#fff"/>
+<rect x="60" y="130" width="90" height="10" rx="5" fill="#1C1917"/>
+<g><circle cx="70" cy="168" r="9" fill="#22C55E"/><path d="M65 168l3 3 6-6" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><rect x="88" y="163" width="120" height="9" rx="4.5" fill="#D6D3D1"/>
+<circle cx="70" cy="196" r="9" fill="#22C55E"/><path d="M65 196l3 3 6-6" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><rect x="88" y="191" width="100" height="9" rx="4.5" fill="#D6D3D1"/>
+<circle cx="70" cy="224" r="9" fill="#F97316"/><path d="M70 219v6M70 229v.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><rect x="88" y="219" width="110" height="9" rx="4.5" fill="#FED7AA"/></g>
+</g>
+<!-- api card -->
+<g filter="url(#sh)">
+<rect x="590" y="300" width="180" height="120" rx="18" fill="#1C1917"/>
+<text x="610" y="340" font-family="ui-monospace,Menlo,monospace" font-size="22" font-weight="700" fill="#FB923C">{ API }</text>
+<rect x="610" y="358" width="54" height="20" rx="10" fill="#22C55E"/><text x="621" y="373" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#fff">200</text>
+<rect x="674" y="364" width="76" height="8" rx="4" fill="#57534E"/><rect x="610" y="392" width="120" height="8" rx="4" fill="#57534E"/>
+</g>
+<g fill="#F97316"><path d="M700 80l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/><path d="M110 400l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>
+</svg>

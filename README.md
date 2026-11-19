@@ -14,6 +14,7 @@ A visitor who passes the gate isn't asked again in the same browser tab (session
 - `assets/style.css` — theme and layout
 - `assets/app.js` — gate logic, scroll reveal, active nav
 - `assets/portrait.jpg` — profile photo
+- `assets/highlights/*.svg` — illustrations for the highlight project cards
 
 No build step: deploy the repo root as a static site (Cloudflare, GitHub Pages, etc.).
 
